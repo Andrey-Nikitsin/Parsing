@@ -38,5 +38,6 @@ getr.insert(0, '')
 getr.insert(len(getr)-1,'\n')
 ' '.join(getr)
 
+
 with open('info.txt', 'w') as file:
     file.write(' '.join(getr))
