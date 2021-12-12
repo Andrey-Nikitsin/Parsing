@@ -10,20 +10,11 @@ def get_html():
     return BS(response.text, features = "html.parser")
 
 Html1 = get_html()
-tag = Html1.header
-tag.decompose()
-bonuse = Html1.select('body > div.fixed-bonus')[0]
-bonuse.decompose()
-delivery = Html1.select('#delivery')[0]
-delivery.decompose()
-footer = Html1.footer
-footer.decompose()
-res = Html1.select('body')[0]
-
+res = Html1.body
 res = res.stripped_strings
 for i in res:
     getr.append(i)
-getr = getr[:-32]
+getr = getr[:-55]
 for elem in getr:
     if elem == '?':
         index = getr.index(elem)
