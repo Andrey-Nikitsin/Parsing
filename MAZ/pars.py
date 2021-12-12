@@ -11,12 +11,11 @@ def get_html():
 
 Html1 = get_html()
 res = Html1.select('#bus')[0]
-
 res = res.stripped_strings
-s=0
 for i in res:
     if 'МАЗ' in i:
         getr.append(f'\n\n{i}\n')
     else:
         getr.append(i)
-print(' '.join(getr))
+with open('info.txt', 'w') as file:
+    file.write(' '.join(getr))
