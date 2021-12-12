@@ -12,13 +12,17 @@ lis = []
 res = Html1.select('#vidy > div > div > div')
 for elem in res:
     header = elem.find("h1")
-    print(header.text)
+    lis.append(header.text)
     prise = elem.find("p")
-    print(prise.text)
+    lis.append(prise.text)
     size = elem.find("h4")
-    print(size.text)
+    lis.append(size.text)
     power = elem.find("table")
     power = power.stripped_strings
+    power_list = ''
     for i in power:
-        print(f'{i}',end=' ')
-    print('\n')
+        power_list+=i
+    power_list += '\n'
+    lis.append(power_list)
+for elem in lis:
+    print(elem)
