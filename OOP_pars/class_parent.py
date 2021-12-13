@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as BS
 
-class pars:
+class ParentClass:
     url = None
     selector = None
     def sew_url(self,url):

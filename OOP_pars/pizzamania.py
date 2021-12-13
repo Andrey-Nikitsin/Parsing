@@ -1,8 +1,8 @@
-from class_parent import pars
+from class_parent import ParentClass
 import requests
 from bs4 import BeautifulSoup as BS
 
-class pizza(pars):
+class PizzaChildClass(ParentClass):
     def parse(self):
         text_site = []
         res = self.response()
@@ -27,7 +27,7 @@ class pizza(pars):
         text_site.insert(len(text_site) - 1, '\n')
         return ' '.join(text_site)
 
-pizza = pizza()
+pizza = PizzaChildClass()
 pizza.sew_url('https://pizzamania.by/')
 pizza.sew_selector("body")
 print(pizza.show())

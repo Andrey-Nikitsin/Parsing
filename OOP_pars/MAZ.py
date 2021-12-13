@@ -1,8 +1,8 @@
-from class_parent import pars
+from class_parent import ParentClass
 import requests
 from bs4 import BeautifulSoup as BS
 
-class maz(pars):
+class MazChildClass(ParentClass):
     def parse(self):
         text_site = []
         res = self.response()
@@ -18,7 +18,7 @@ class maz(pars):
         text_site = g.copy()
         return ' '.join(text_site)
 
-maz = maz()
+maz = MazChildClass()
 maz.sew_url('http://maz.by/products/passenger-vehicles')
 maz.sew_selector("#bus")
 print(maz.show())

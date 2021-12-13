@@ -1,8 +1,8 @@
-from class_parent import pars
+from class_parent import ParentClass
 import requests
 from bs4 import BeautifulSoup as BS
 
-class awelux(pars):
+class AweluxChildClass(ParentClass):
     def response(self):
         response = requests.get(self.get_url())
         html = BS(response.text, features="html.parser")
@@ -31,7 +31,7 @@ class awelux(pars):
         for elem in text_site:
             print(elem)
 
-awelux = awelux()
+awelux = AweluxChildClass()
 awelux.sew_url('https://avelux.by/katalog.html')
 awelux.sew_selector('#vidy > div > div > div')
 print(awelux.show())
